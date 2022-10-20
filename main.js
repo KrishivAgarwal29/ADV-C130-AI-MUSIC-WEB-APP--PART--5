@@ -19,8 +19,8 @@ function setup(){
 }
 
 function preload(){
-    gods_plan = loadSound("music2.mp3");
-    on_and_on = loadSound("music.mp3");
+    gods_plan = loadSound("gods_plan.mp3");
+    on_and_on = loadSound("on_and_on.mp3");
 }
 
 function draw(){
