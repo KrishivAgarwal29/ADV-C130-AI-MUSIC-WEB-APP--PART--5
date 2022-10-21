@@ -6,6 +6,8 @@ leftWrist_x = 0;
 leftWrist_y = 0;
 scoreleftWrist = 0;
 scorerightWrist = 0;
+gods_plan_status = ""
+on_and_on_status = ""
 
 function setup(){
     canvas = createCanvas(600,530);
@@ -29,32 +31,26 @@ function draw(){
     fill("#00ff00");
     stroke("#ff0000");
 
-    gods_plan = gods_plan.isPlaying();
-    console.log(gods_plan);
+    gods_plan_status = gods_plan.isPlaying();
+    console.log(gods_plan_status);
 
-    n_and_on = on_and_on.isPlaying();
-    console.log(n_and_on);
+    on_and_on_status = on_and_on.isPlaying();
+    console.log(on_and_on_status);
 
-    if(scoreleftWrist > 0.2){
-        circle(leftWrist_x,leftWrist_y,20);
-        n_and_on.stop();
-        if(gods_plan == false){
+    if(scorerightWrist > 0.2){
+        circle(rightWrist_x,rightWrist_y,20);
+        on_and_on.stop();
+        if(gods_plan_status == false){
             gods_plan.play();
-        }
-        else{
-            console.log("Song Name: Gods Plan");
             document.getElementById("song_id").innerHTML = "Song Name: Gods Plan";
         }
     }
 
-    if(scorerightWrist > 0.2){
-        circle(rightWrist_x,rightWrist_y,20);
+    if(scoreleftWrist > 0.2){
+        circle(leftWrist_x,eftWrist_y,20);
         gods_plan.stop();
-        if(n_and_on == false){
-            n_and_on.play();
-        }
-        else{
-            console.log("Song Name: On and On");
+        if(on_and_on_status == false){
+            on_and_on.play();
             document.getElementById("song_id").innerHTML = "Song Name: On and On";
         }
     }
